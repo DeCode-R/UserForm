@@ -43,7 +43,8 @@ export function LoginForm() {
       const result: Result = await response.json();
 
       setResult(result)
-
+      if(result.success)alert("Login Successful")
+      
       
     } catch (error) {
       console.error();
@@ -56,7 +57,7 @@ export function LoginForm() {
 
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={`space-y-8 ${result.success ? "hidden" : ""}`}
+        className={`space-y-8 `}
       >
         <FormField
           control={form.control}
@@ -126,6 +127,7 @@ export function RegisterForm() {
       const result: Result = await response.json();
 
       setResult(result)
+      if(result.success)alert("Registration Successful")
 
     } catch (error) {
       console.error();
@@ -136,7 +138,7 @@ export function RegisterForm() {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className={`space-y-8 ${result.success ? "hidden" : ""}`}
+        className={`space-y-8 `}
       >
         <FormField
           control={form.control}
